@@ -21,6 +21,9 @@ public class SynchronizedSwimming {
 		Swimmer b = new Swimmer("Sally");
 		a.start();
 		b.start();
+		
+		a.run();
+		b.run();
 	}
 
 	/*

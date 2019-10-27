@@ -10,7 +10,7 @@ public class ThreadedReverseGreeting {
 
 public static void main(String[] args) throws InterruptedException {
 	Thread[] threads= new Thread[50];
-	for (int i = 49; i >0; i--) {
+	for (int i = 49; i >=0; i--) {
 		int k=i;
 		threads[i]= new Thread(()->{
 			System.out.println("Hello from thread"+ k);
@@ -20,8 +20,9 @@ public static void main(String[] args) throws InterruptedException {
 	}
 	
 	for (int i = threads.length-1; i >0; i--) {
-		threads[i].join();
 		threads[i].start();
+		threads[i].join();
+		
 	}
 }
 
